@@ -1,1 +1,35 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Emulator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .navbar { background: #333; color: white; padding: 10px; }
+        .navbar input[type='text'] { width: 80%; }
+        .tabs { display: flex; background: #f1f1f1; padding: 10px; }
+        .tab { margin-right: 10px; padding: 10px; cursor: pointer; border: 1px solid #ccc; }
+        .content { padding: 20px; border: 1px solid #ccc; margin-top: 10px; height: 400px; } 
+        .buttons { margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <button class="buttons">◀ Prev</button>
+        <button class="buttons">▶ Next</button>
+        <input type="text" placeholder="Enter URL" />
+        <button>Go</button>
+    </div>
+    <div class="tabs">
+        <div class="tab">Tab 1</div>
+        <div class="tab">Tab 2</div>
+        <div class="tab">Tab 3</div>
+    </div>
+    <div class="content">
+        <h2>Welcome to the Browser Emulator</h2>
+        <p>This is the content area where web pages will be displayed.</p>
+    </div>
+</body>
+</html>
