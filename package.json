@@ -1,1 +1,1 @@
-
+{\n  \"name\": \"browser-emulator\",\n  \"version\": \"1.0.0\",\n  \"description\": \"A browser emulator application.\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"start\": \"node index.js\"\n  },\n  \"dependencies\": {\n    \"express\": \"^4.17.1\",\n    \"cors\": \"^2.8.5\",\n    \"body-parser\": \"^1.19.0\",\n    \"other-necessary-package\": \"latest\"\n  }\n}
