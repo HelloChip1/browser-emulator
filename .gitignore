@@ -1,1 +1,21 @@
+# Node modules folder
+node_modules/
+
+# macOS specific files
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# Directory for test files
+coverage/
+
+# Build results
+dist/
+build/
 
