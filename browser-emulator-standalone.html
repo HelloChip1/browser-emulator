@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Emulator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        #navbar { background: #333; color: white; padding: 10px; }
+        #tabs { display: flex; }
+        .tab { margin-right: 10px; padding: 10px; background: #444; color: white; cursor: pointer; }
+        #address-bar { width: 100%; }
+        #content { padding: 20px; border: 1px solid #ccc; height: 500px; overflow: auto; }
+        #console { font-family: monospace; background: #f0f0f0; } 
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <input type="text" id="address-bar" placeholder="Enter URL" />
+        <button onclick="navigate()">Go</button>
+        <button onclick="back()">Back</button>
+        <button onclick="forward()">Forward</button>
+        <button onclick="openConsole()">Dev Console</button>
+    </div>
+    <div id="tabs"></div>
+    <div id="content"></div>
+    <div id="console" style="display:none;"></div>
+    <script>
+        const tabs = [];
+        let currentTab = null;
+
+        function createTab(url) {
+            const tab = document.createElement('div');
+            tab.className = 'tab';
+            tab.innerText = url;
+            tab.onclick = () => navigate(url);
+            document.getElementById('tabs').appendChild(tab);
+            tabs.push(url);
+            if (!currentTab) {
+                navigate(url);
+            }
+        }
+
+        function navigate(url = document.getElementById('address-bar').value) {
+            currentTab = url;
+            const content = document.getElementById('content');
+            content.innerHTML = '<h1>Loading...</h1>';
+            // Simulate fetching content for the URL
+            setTimeout(() => {
+                content.innerHTML = '<h1>Content of ' + url + '</h1>';
+            }, 1000);
+            createTab(url);
+        }
+
+        function back() { /* function to go back */ }
+        function forward() { /* function to go forward */ }
+        function openConsole() {
+            const consoleDiv = document.getElementById('console');
+            consoleDiv.style.display = consoleDiv.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Example usage
+        document.getElementById('address-bar').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                navigate();
+            }
+        });
+    </script>
+</body>
+</html>
